@@ -1,7 +1,7 @@
 name: Docs
 
-# TypeDoc API reference → GitHub Pages. Requires Pages enabled on the repo
-# with "GitHub Actions" as the source (Settings → Pages).
+# TypeDoc API reference → GitHub Pages. `enablement: true` creates the Pages
+# site (source: GitHub Actions) on first run if it doesn't exist.
 
 on:
   push:
@@ -33,6 +33,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: npx typedoc
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs-dist
