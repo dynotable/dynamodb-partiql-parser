@@ -101,7 +101,7 @@ The dialect walker covers the DynamoDB PartiQL restrictions documented in the [A
 
 ## Relationship to the editor
 
-This is the same parser that runs inside DynoTable's PartiQL editor; the app consumes it with a thin CodeMirror adapter. If you want the editor wiring instead of the raw parser, use [codemirror-lang-partiql](https://github.com/dynotable/codemirror-lang-partiql). For a walkthrough of DynamoDB's PartiQL dialect itself, see the [DynamoDB PartiQL guide](https://dynotable.com/learn/dynamodb-partiql).
+This is the same parser that runs inside DynoTable's PartiQL editor; the app consumes it with a thin CodeMirror adapter. If you want the editor wiring instead of the raw parser, use [codemirror-lang-partiql](https://github.com/dynotable/codemirror-lang-partiql). For a walkthrough of DynamoDB's PartiQL dialect itself, see the [DynamoDB PartiQL guide](https://dynotable.com/learn/dynamodb-partiql-examples).
 
 ## License
 
