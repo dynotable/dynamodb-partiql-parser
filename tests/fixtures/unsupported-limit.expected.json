@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-limit"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "Statement-level LIMIT is not supported",
+      "severity": "error"
+    }
+  ]
+}

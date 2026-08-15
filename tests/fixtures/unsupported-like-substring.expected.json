@@ -1,0 +1,15 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "rules": ["unsupported-like-substring"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "LIKE '%foo%' is not supported",
+      "severity": "error"
+    }
+  ],
+  "quickFix": {
+    "label": "Use contains",
+    "applied": "SELECT * FROM t WHERE contains(name, 'foo')"
+  }
+}

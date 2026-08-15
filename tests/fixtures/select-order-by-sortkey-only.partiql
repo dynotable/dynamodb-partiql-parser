@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: order-by-sortkey-only
+SELECT * FROM "Music" WHERE Artist = 'a' ORDER BY SongTitle

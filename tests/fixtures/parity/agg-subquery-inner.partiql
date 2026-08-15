@@ -1,0 +1,4 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag both the subquery and its inner aggregate (parser stricter)"
+// ALLOWED-DRIFT: legacy regex linter skipped the SELECT-list aggregate rule when the list contained a subquery (a heuristic to dodge a lazy `.*?\s+FROM\b` mis-capture). The CST walker flags the subquery AND recurses to flag the inner aggregate; both are independently correct (parser stricter).
+
+SELECT (SELECT COUNT(*) FROM "u") FROM "t"

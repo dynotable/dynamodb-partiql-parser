@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html
+// RULES: fn-size, fn-exists, fn-attribute-type, fn-begins-with, fn-contains
+SELECT * FROM t WHERE SIZE(a) > 0 AND EXISTS(b) AND ATTRIBUTE_TYPE(c, 'S') AND BEGINS_WITH(d, 'x') AND CONTAINS(e, 'y')

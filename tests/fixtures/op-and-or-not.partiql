@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html
+// RULES: op-and, op-or, op-not
+SELECT * FROM t WHERE NOT (a = 1) AND (b = 2 OR c = 3)

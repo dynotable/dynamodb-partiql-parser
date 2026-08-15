@@ -1,0 +1,5 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["literal-string-escape"],
+  "clean": true
+}

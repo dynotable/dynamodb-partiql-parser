@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: update-set-nested-path
+UPDATE "Music" SET Devices.tv.last[0] = 'lg' WHERE pk = 'x'

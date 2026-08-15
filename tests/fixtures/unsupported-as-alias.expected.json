@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-as-alias"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "Column aliases (AS) are not supported",
+      "severity": "error"
+    }
+  ]
+}

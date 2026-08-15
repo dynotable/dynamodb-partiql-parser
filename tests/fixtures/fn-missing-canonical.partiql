@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html
+// RULES: fn-missing
+SELECT * FROM t WHERE MISSING(a) AND NOT MISSING(b)

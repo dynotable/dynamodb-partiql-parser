@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should warn on /* block */ comment"
+
+SELECT * /* hi */ FROM $table

@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: update-set-single
+UPDATE "Music" SET AwardsWon = 1 WHERE Artist = 'Acme' AND SongTitle = 'x'

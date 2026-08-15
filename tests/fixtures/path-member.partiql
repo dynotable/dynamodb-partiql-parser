@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: path-member
+SELECT a.b FROM t WHERE a.b = 1

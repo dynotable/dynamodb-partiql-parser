@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: update-remove
+UPDATE "Music" REMOVE Genre WHERE pk = 'x'

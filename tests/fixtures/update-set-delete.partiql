@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: fn-set-delete
+UPDATE "Music" SET nums = set_delete(nums, <<1>>) WHERE pk = 'x'

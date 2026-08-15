@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: table-bare-dotted
+SELECT * FROM tbl.idx WHERE pk = 1

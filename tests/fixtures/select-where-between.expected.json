@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "rules": ["op-between"],
+  "statementKind": "select_statement",
+  "clean": true
+}

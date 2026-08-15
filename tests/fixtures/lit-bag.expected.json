@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html",
+  "rules": ["literal-bag"],
+  "statementKind": "update_statement",
+  "clean": true
+}

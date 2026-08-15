@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.insert.html
+// RULES: insert-nested-value, literal-map, literal-list
+INSERT INTO "Music" VALUE {'Artist': 'A', 'Meta': {'plays': [1, 2, 3]}}

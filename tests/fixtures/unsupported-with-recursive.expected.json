@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-with-recursive"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "WITH/CTE is not supported",
+      "severity": "error"
+    }
+  ]
+}

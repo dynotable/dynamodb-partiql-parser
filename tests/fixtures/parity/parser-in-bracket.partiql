@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should accept IN with a bracket list literal"
+
+SELECT * FROM t WHERE id IN ['a', 'b', 'c']

@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: select-document-path-projection
+SELECT Devices.FireStick.DateWatched[0] FROM "Users" WHERE Id = 'u1'

@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should not flag false-positive 'COUNT(*)' string literal"
+
+SELECT * FROM "t" WHERE name = 'COUNT(*)'

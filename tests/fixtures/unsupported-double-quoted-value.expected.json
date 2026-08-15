@@ -1,0 +1,15 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-double-quoted-value"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "Double quotes delimit identifiers",
+      "severity": "error"
+    }
+  ],
+  "quickFix": {
+    "label": "Use single quotes",
+    "applied": "SELECT * FROM t WHERE x = 'value'"
+  }
+}

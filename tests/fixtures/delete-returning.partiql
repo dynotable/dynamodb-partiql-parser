@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.delete.html
+// RULES: delete-returning
+DELETE FROM "Music" WHERE pk = 'x' RETURNING ALL OLD *

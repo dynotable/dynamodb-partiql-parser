@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should exempt LHS double-quoted column in WHERE but flag RHS"
+
+SELECT "col" FROM $table WHERE "col" = "v"

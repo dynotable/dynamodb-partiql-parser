@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.insert.html
+// RULES: insert-value-object
+INSERT INTO "Music" VALUE {'Artist': 'Acme', 'SongTitle': 'PartiQL'}

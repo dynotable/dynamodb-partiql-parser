@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html",
+  "rules": ["fn-unsupported-aggregate-where"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "cannot be used in WHERE clause",
+      "severity": "error"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-convert"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "CONVERT is not supported",
+      "severity": "error"
+    }
+  ]
+}

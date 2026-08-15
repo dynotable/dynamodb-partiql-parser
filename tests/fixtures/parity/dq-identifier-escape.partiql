@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should handle doubled-quote escape in identifier"
+
+SELECT "say ""hi""" FROM $table

@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: literal-integer, literal-decimal, literal-scientific
+SELECT * FROM t WHERE a = 42 AND b = 3.14 AND c = 1.5e3

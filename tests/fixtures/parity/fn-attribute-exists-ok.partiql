@@ -1,0 +1,4 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should not flag attribute_exists"
+// ALLOWED-DRIFT: parser emits the full-table-scan warning for a WHERE clause with no partition-key predicate; the legacy regex full-scan rule requires a bare-word table name and silently no-ops on the `$table` placeholder, so it never warned here. Correct per the AWS spec / matches legacy on a real table name (parser stricter).
+
+SELECT * FROM $table WHERE attribute_exists(field)

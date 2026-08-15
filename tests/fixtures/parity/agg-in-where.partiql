@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should not double-fire when aggregate is inside WHERE"
+
+SELECT name FROM "t" WHERE COUNT(x) = 1

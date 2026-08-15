@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-group-by"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "GROUP BY is not supported",
+      "severity": "error"
+    }
+  ]
+}

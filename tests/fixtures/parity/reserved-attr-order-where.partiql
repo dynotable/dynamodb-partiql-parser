@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "(review iteration) should accept `order` as a bare attribute name in WHERE"
+
+SELECT * FROM Users WHERE order = 'x'

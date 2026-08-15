@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.insert.html
+// RULES: literal-map, literal-nested-combo
+INSERT INTO t VALUE {'a': [{'b': 1}], 'c': <<1, 2>>}

@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: select-projection-list
+SELECT Artist, SongTitle FROM "Music" WHERE Artist = 'Acme'

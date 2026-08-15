@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: update-returning-all-new
+UPDATE "Music" SET a = 1 WHERE pk = 'x' RETURNING ALL NEW *

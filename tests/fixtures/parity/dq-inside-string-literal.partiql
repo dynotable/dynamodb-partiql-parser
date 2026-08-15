@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should not flag double-quotes inside a single-quoted string literal"
+
+SELECT * FROM $table WHERE doc = '{"k": "v"}'

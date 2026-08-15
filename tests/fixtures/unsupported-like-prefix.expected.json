@@ -1,0 +1,14 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "rules": ["unsupported-like-prefix"],
+  "expect": [
+    {
+      "severity": "warning",
+      "messageIncludes": "begins_with"
+    }
+  ],
+  "quickFix": {
+    "label": "Use begins_with",
+    "applied": "SELECT * FROM t WHERE begins_with(name, 'foo')"
+  }
+}

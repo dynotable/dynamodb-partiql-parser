@@ -1,0 +1,12 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["select-where-no-key-full-scan"],
+  "statementKind": "select_statement",
+  "clean": true,
+  "expect": [
+    {
+      "severity": "warning",
+      "messageIncludes": "full table scan"
+    }
+  ]
+}

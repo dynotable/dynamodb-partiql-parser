@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should parse double-quoted Table"."Index access clean"
+
+SELECT * FROM "t"."idx" WHERE id = '1'

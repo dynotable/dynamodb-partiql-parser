@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["in-cardinality-50"],
+  "statementKind": "select_statement",
+  "clean": true
+}

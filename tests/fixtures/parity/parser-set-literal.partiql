@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should accept a <<...>> set literal in UPDATE SET"
+
+UPDATE t SET tags = <<'a', 'b'>> WHERE id = '1'

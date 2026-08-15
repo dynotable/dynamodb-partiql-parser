@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: fn-set-add, literal-bag
+UPDATE "Music" SET nums = set_add(nums, <<1, 2>>) WHERE pk = 'x'

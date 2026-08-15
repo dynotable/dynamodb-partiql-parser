@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "docs-dist",
+  "name": "dynamodb-partiql-parser",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "navigationLinks": {
+    "GitHub": "https://github.com/dynotable/dynamodb-partiql-parser",
+    "npm": "https://www.npmjs.com/package/dynamodb-partiql-parser",
+    "DynamoDB PartiQL guide": "https://dynotable.com/learn/dynamodb-partiql"
+  }
+}

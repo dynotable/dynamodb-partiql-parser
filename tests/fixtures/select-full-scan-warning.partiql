@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: select-where-no-key-full-scan
+SELECT * FROM "Music" WHERE Year > 1990

@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: from-quoted-table-index
+SELECT * FROM "Music"."GenreIndex" WHERE Genre = 'Rock'

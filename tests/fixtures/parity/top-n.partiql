@@ -1,0 +1,4 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag TOP N"
+// ALLOWED-DRIFT: parser additionally emits a recovery parse-error (`Expected expression, got 'FROM'`) after consuming the unsupported `TOP 10` prefix; the legacy regex linter emitted only the single TOP message. Both still flag TOP as an error so the Run-button gate is unchanged (parser stricter).
+
+SELECT TOP 10 * FROM $table

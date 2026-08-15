@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: unsupported-intersect
+SELECT * FROM t INTERSECT SELECT * FROM u

@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should NOT double-flag AS inside CAST(... AS ...)"
+
+SELECT CAST(x AS INT) FROM $table

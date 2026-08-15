@@ -1,0 +1,15 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html",
+  "rules": ["fn-bare-missing-quickfix"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "attribute_not_exists",
+      "severity": "error"
+    }
+  ],
+  "quickFix": {
+    "label": "Use attribute_not_exists",
+    "applied": "SELECT * FROM t WHERE attribute_not_exists(x)"
+  }
+}

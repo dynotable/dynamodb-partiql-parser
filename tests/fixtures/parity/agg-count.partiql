@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag aggregate with Workbench message"
+
+SELECT COUNT(*) FROM "orders"

@@ -1,0 +1,72 @@
+{
+  "name": "dynamodb-partiql-parser",
+  "version": "0.1.0",
+  "description": "PartiQL parser and linter for DynamoDB \u2014 lexer, CST parser, and DynamoDB-dialect diagnostics with quick fixes. Pure TypeScript, zero dependencies.",
+  "keywords": [
+    "dynamodb",
+    "partiql",
+    "parser",
+    "linter",
+    "cst",
+    "lexer",
+    "aws",
+    "sql",
+    "diagnostics"
+  ],
+  "license": "MIT",
+  "author": "DynoTable <support@dynotable.com> (https://dynotable.com)",
+  "homepage": "https://dynotable.com/learn/dynamodb-partiql",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dynotable/dynamodb-partiql-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dynotable/dynamodb-partiql-parser/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "lint": "oxlint src tests",
+    "typecheck": "tsc --noEmit",
+    "check:package": "publint && attw --pack ."
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@types/node": "^26.2.0",
+    "oxlint": "^1.35.0",
+    "publint": "^0.3.14",
+    "tsdown": "^0.15.7",
+    "typedoc": "^0.28.20",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.0"
+  }
+}

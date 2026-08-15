@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-case-when"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "CASE expressions are not supported",
+      "severity": "error"
+    }
+  ]
+}

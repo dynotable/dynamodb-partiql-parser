@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "rules": ["unsupported-like-suffix"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "suffix match",
+      "severity": "error"
+    }
+  ]
+}

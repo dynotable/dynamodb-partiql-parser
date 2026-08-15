@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should treat double-quoted column projections in SELECT list as identifiers"
+
+SELECT foo, "bar-baz", qux FROM $table

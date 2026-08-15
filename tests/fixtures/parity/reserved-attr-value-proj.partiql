@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "(review iteration) should accept `value` as a bare attribute name in projection"
+
+SELECT value FROM Users WHERE id = 'x'

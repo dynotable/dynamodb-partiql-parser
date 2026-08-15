@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-distinct"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "DISTINCT is not supported",
+      "severity": "error"
+    }
+  ]
+}

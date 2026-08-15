@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html
+// RULES: fn-attribute-exists, fn-attribute-not-exists
+SELECT * FROM t WHERE size(a) > 0 AND attribute_exists(b) AND attribute_not_exists(c) AND attribute_type(d, 'S') AND begins_with(e, 'x') AND contains(f, 'y')

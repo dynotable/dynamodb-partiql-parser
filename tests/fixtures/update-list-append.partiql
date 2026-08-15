@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
+// RULES: fn-list-append
+UPDATE "Music" SET tags = list_append(tags, ['x']) WHERE pk = 'x'

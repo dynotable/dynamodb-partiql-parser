@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["select-document-path-projection"],
+  "statementKind": "select_statement",
+  "clean": true
+}

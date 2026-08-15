@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag double-quoted value inside IN [ list"
+
+SELECT * FROM $table WHERE id IN ["a", "b"]

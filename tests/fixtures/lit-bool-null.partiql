@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: literal-bool, literal-null
+SELECT * FROM t WHERE a = true AND b = false AND c = NULL

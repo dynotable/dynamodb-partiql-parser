@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: unsupported-multi-statement
+SELECT * FROM t WHERE x = 1; SELECT * FROM u WHERE y = 2

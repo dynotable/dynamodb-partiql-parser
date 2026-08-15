@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html
+// RULES: op-arith-plus, op-arith-minus
+SELECT * FROM t WHERE a + 1 - 2 = 3

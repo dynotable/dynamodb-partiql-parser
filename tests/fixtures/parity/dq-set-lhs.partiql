@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should exempt LHS double-quoted column in SET"
+
+UPDATE t SET "col" = 'x' WHERE id = '1'

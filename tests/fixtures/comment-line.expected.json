@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["comment-line"],
+  "statementKind": "select_statement",
+  "expect": [
+    {
+      "severity": "warning",
+      "messageIncludes": "SQL comments"
+    }
+  ]
+}

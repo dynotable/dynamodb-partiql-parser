@@ -1,0 +1,10 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-missing-from"],
+  "expect": [
+    {
+      "messageIncludes": "Missing FROM clause",
+      "severity": "error"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag double-quoted RHS in WHERE"
+
+SELECT * FROM $table WHERE brand = "SportZone"

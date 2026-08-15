@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html",
+  "rules": ["fn-unsupported-aggregate-select"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "Use a Workbench (SQL) tab for COUNT/SUM/AVG/GROUP BY queries.",
+      "severity": "error"
+    }
+  ]
+}

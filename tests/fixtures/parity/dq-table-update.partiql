@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should exempt double-quoted table name after UPDATE"
+
+UPDATE "my-table" SET status = 'active' WHERE id = '1'

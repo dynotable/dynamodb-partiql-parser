@@ -1,0 +1,4 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: comment-line
+-- a comment
+SELECT * FROM t WHERE x = 1

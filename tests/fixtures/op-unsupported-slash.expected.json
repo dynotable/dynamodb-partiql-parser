@@ -1,0 +1,11 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "rules": ["op-unsupported-slash"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "'/'",
+      "severity": "error"
+    }
+  ]
+}

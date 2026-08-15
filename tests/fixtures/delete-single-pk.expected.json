@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.delete.html",
+  "rules": ["delete-single-pk"],
+  "statementKind": "delete_statement",
+  "clean": true
+}

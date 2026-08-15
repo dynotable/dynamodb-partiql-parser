@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag CAST/CONVERT"
+
+SELECT CONVERT(x, INT) FROM $table

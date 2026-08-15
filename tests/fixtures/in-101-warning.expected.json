@@ -1,0 +1,12 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["in-cardinality-warning"],
+  "statementKind": "select_statement",
+  "expect": [
+    {
+      "code": "partiql-warning",
+      "severity": "warning",
+      "messageIncludes": "IN list has 101 items"
+    }
+  ]
+}

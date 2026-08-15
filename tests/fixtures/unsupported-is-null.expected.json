@@ -1,0 +1,15 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "rules": ["unsupported-is-null"],
+  "expect": [
+    {
+      "code": "partiql-unsupported",
+      "messageIncludes": "IS NULL is not supported",
+      "severity": "error"
+    }
+  ],
+  "quickFix": {
+    "label": "Use attribute_not_exists",
+    "applied": "SELECT * FROM t WHERE attribute_not_exists(x)"
+  }
+}

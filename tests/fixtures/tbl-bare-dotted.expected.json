@@ -1,0 +1,12 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["table-bare-dotted"],
+  "statementKind": "select_statement",
+  "expect": [
+    {
+      "code": "partiql-warning",
+      "severity": "warning",
+      "messageIncludes": "Quote table and index names"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should flag bare LIKE 'foo' (legacy missed this — parser stricter)"
+// ALLOWED-DRIFT: legacy regex linter only flagged LIKE patterns containing `%`; bare `LIKE 'foo'` slipped through silently. LIKE is not a DynamoDB PartiQL operator in any form, so the parser correctly flags it. Parser also adds the full-table-scan warning (WHERE with no partition-key predicate; legacy's regex no-ops on the `$table` placeholder) (parser stricter).
+
+SELECT * FROM $table WHERE name LIKE 'foo'

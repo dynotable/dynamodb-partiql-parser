@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: unsupported-in-paren-list
+SELECT * FROM t WHERE x IN ('a', 'b', 'c')

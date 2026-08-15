@@ -1,0 +1,3 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should escape embedded single quotes by doubling in quick-fix"
+
+SELECT * FROM $table WHERE name = "O'Brien"

@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: where-in-bracket-list, literal-list
+SELECT * FROM "Music" WHERE Artist IN ['a', 'b', 'c']

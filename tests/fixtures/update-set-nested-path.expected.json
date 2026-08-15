@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html",
+  "rules": ["update-set-nested-path"],
+  "statementKind": "update_statement",
+  "clean": true
+}

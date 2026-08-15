@@ -1,0 +1,4 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should accept MISSING(attr) and EXISTS(attr) canonical functions"
+// ALLOWED-DRIFT: legacy regex linter false-positived on the AWS-canonical `MISSING(attr)` function, treating it as the bare unsupported `missing()` form and demanding `attribute_not_exists`. The parser correctly accepts `MISSING(attr)` per the AWS PartiQL function spec — a legacy false positive removed (intentional).
+
+SELECT * FROM t WHERE MISSING(attr) AND id = '1'

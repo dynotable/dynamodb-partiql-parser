@@ -1,0 +1,4 @@
+// SOURCE: src/tests/unit/components/partiql-validation.test.ts — "should warn on -- line comment"
+
+SELECT * FROM $table -- comment
+WHERE id = '1'

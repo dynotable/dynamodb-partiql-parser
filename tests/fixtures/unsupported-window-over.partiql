@@ -1,0 +1,3 @@
+// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html
+// RULES: unsupported-window-over
+SELECT row_number() OVER (PARTITION BY x) FROM t

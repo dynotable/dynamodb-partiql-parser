@@ -1,0 +1,5 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html",
+  "rules": ["fn-size", "fn-exists", "fn-attribute-type", "fn-begins-with", "fn-contains"],
+  "clean": true
+}

@@ -1,0 +1,6 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.insert.html",
+  "rules": ["literal-map", "literal-nested-combo"],
+  "statementKind": "insert_statement",
+  "clean": true
+}

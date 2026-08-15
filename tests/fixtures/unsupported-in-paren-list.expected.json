@@ -1,0 +1,14 @@
+{
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "rules": ["unsupported-in-paren-list"],
+  "expect": [
+    {
+      "messageIncludes": "square brackets",
+      "severity": "error"
+    }
+  ],
+  "quickFix": {
+    "label": "Use brackets",
+    "applied": "SELECT * FROM t WHERE x IN ['a', 'b', 'c']"
+  }
+}
