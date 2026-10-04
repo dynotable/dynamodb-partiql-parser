@@ -1,6 +1,6 @@
 {
   "name": "dynamodb-partiql-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "PartiQL parser and linter for DynamoDB \u2014 lexer, CST parser, and DynamoDB-dialect diagnostics with quick fixes. Pure TypeScript, zero dependencies.",
   "keywords": [
     "dynamodb",

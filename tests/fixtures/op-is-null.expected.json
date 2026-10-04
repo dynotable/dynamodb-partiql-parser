@@ -1,12 +1,12 @@
 {
   "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html",
-  "rules": ["in-cardinality-warning"],
-  "statementKind": "select_statement",
+  "rules": ["op-is-null"],
+  "clean": true,
   "expect": [
     {
       "code": "partiql-warning",
-      "severity": "warning",
-      "messageIncludes": "IN list has 101 items"
+      "messageIncludes": "use IS MISSING",
+      "severity": "warning"
     }
   ]
 }

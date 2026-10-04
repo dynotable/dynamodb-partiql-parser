@@ -1,3 +1,0 @@
-// SOURCE: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html
-// RULES: unsupported-is-null
-SELECT * FROM t WHERE x IS NULL

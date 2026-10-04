@@ -2,7 +2,7 @@
 // accepted-then-collected (JOIN, GROUP BY, HAVING, set ops, LIMIT, OFFSET,
 // DISTINCT, TOP, CASE WHEN, CAST/CONVERT, subqueries, AS column aliases,
 // CTE/WITH, window OVER, DDL, arithmetic `*`/`/`/`%`/`||`, SQL-only function
-// names, aggregates, IN(paren-list), LIKE patterns, IS NULL, double-quoted
+// names, aggregates, IN(paren-list), LIKE patterns, IS NULL semantics, double-quoted
 // strings used in value position, full-table-scan warnings, and missing-FROM).
 //
 // Each finding is emitted as a `Diagnostic`. Quick-fix payloads are attached
@@ -336,15 +336,11 @@ function walkExpression(expr: Expression, ctx: WalkerContext): void {
       return;
     case 'in_expression':
       walkExpression(expr.test, ctx);
-      // Pre-execute cardinality guardrail. The IN operator's list caps at 100
-      // values (AWS, "Writing conditions with legacy parameters",
-      // docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Conditions.html,
-      // fetched 2026-08-15: "The list can contain up to 100 values"). The
-      // stricter 50-value cap for partition-key IN lists is widely reported
-      // but absent from current operative AWS docs — treated as advisory
-      // only. The linter can't tell PK from non-key without schema, so it
-      // warns once past the documented 100 cap, giving advance notice before
-      // a server-side rejection. Only literal lists are counted (subquery
+      // Pre-execute cardinality guardrail. AWS caps the IN list at 50
+      // partition-key values or 100 non-key values (PartiQL operators page,
+      // docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html).
+      // The linter can't tell PK from non-key without schema, so it warns
+      // only past the 100 cap. Only literal lists are counted (subquery
       // expansions are flagged separately).
       if (expr.source.kind === 'list_literal' && expr.source.items.length > 100) {
         ctx.diagnostics.push({
@@ -626,32 +622,17 @@ function isPathLikeExpression(expr: Expression): boolean {
 
 function walkIsNull(expr: IsNullExpression, ctx: WalkerContext): void {
   walkExpression(expr.test, ctx);
-  const fieldText = sliceText(ctx.source, expr.test.range);
-  // Legacy maps `IS NULL → attribute_not_exists` and `IS NOT NULL → attribute_exists`
-  // (inverse). Preserve that for parity-corpus stability. Quick-fix is only
-  // safe when `test` is a path expression — `foo + 1 IS NULL` rewriting to
-  // `attribute_not_exists(foo + 1)` would be invalid PartiQL. Legacy regex
-  // only matched identifier paths; mirror that here.
-  const fnName = expr.negated ? 'attribute_exists' : 'attribute_not_exists';
-  const replacement = `${fnName}(${fieldText})`;
-  const testIsPath = isPathLikeExpression(expr.test);
+  // DynamoDB accepts IS [NOT] NULL, but NULL means "stored as the NULL type",
+  // not "absent". SQL users expect IS NULL to match absent attributes. No
+  // quick fix: every rewrite (IS MISSING, attribute_not_exists) changes the
+  // result set, and consumers apply quick fixes without review.
   ctx.diagnostics.push({
-    code: DIAGNOSTIC_CODES.unsupported,
-    message: `IS ${expr.negated ? 'NOT ' : ''}NULL is not supported in DynamoDB PartiQL. Use ${replacement}.`,
+    code: DIAGNOSTIC_CODES.warning,
+    message: expr.negated
+      ? 'IS NOT NULL also matches items where the attribute is absent. To match only items that have the attribute, use IS NOT MISSING.'
+      : 'IS NULL matches only attributes stored with the NULL type, not absent attributes. To match absent attributes, use IS MISSING.',
     range: expr.range,
-    severity: 'error',
-    actions: testIsPath
-      ? [
-          {
-            label: `Use ${fnName}`,
-            edit: {
-              start: expr.range.start,
-              end: expr.range.end,
-              text: replacement
-            }
-          }
-        ]
-      : undefined
+    severity: 'warning'
   });
 }
 

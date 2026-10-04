@@ -1,5 +1,5 @@
 {
-  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html",
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html",
   "rules": ["op-is-missing"],
   "clean": true
 }

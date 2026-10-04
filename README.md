@@ -2,7 +2,7 @@
 
 A PartiQL parser and linter for DynamoDB, in pure TypeScript with zero dependencies.
 
-DynamoDB accepts a narrow subset of PartiQL. Everything else fails at request time with a `ValidationException`, after you've already sent the statement. This package parses the full grammar, then tells you before execution which constructs DynamoDB will reject: JOIN, GROUP BY, LIMIT, OFFSET, subqueries, CASE WHEN, CAST, aggregates, SQL-only functions, and a few dozen more. Where a rewrite exists, diagnostics carry a machine-applicable quick fix (`IN (...)` to `[...]`, `LIKE` to `contains()`, `IS NULL` to `attribute_not_exists()`).
+DynamoDB accepts a narrow subset of PartiQL. Everything else fails at request time with a `ValidationException`, after you've already sent the statement. This package parses the full grammar, then tells you before execution which constructs DynamoDB will reject: JOIN, GROUP BY, LIMIT, OFFSET, subqueries, CASE WHEN, CAST, aggregates, SQL-only functions, and a few dozen more. Where a rewrite exists, diagnostics carry a machine-applicable quick fix (`IN (...)` to `[...]`, `LIKE` to `contains()`).
 
 It was built for the query editor in [DynoTable](https://dynotable.com), where it lints on every keystroke. The parser is a hand-written lexer and recursive-descent CST parser: error-tolerant, no stack overflows on adversarial input, no grammar files, no build step surprises. 448 unit tests and a 200+ fixture corpus derived from the AWS PartiQL reference pin its behavior.
 

@@ -260,23 +260,16 @@ describe('findUnsupportedConstructs — LIKE quick-fix payloads', () => {
   });
 });
 
-describe('findUnsupportedConstructs — IS NULL quick-fix payloads (INVERSE mapping)', () => {
-  it('should flag IS NULL → attribute_not_exists', () => {
-    const input = 'SELECT * FROM t WHERE x IS NULL';
-    const ds = unsupported(input);
-    const fix = ds.find((d) => d.actions?.[0]?.label === 'Use attribute_not_exists');
-    expect(fix).toBeDefined();
-    const rewritten = applyEdit(input, fix!);
-    expect(rewritten).toBe('SELECT * FROM t WHERE attribute_not_exists(x)');
-  });
-
-  it('should flag IS NOT NULL → attribute_exists', () => {
-    const input = 'SELECT * FROM t WHERE x IS NOT NULL';
-    const ds = unsupported(input);
-    const fix = ds.find((d) => d.actions?.[0]?.label === 'Use attribute_exists');
-    expect(fix).toBeDefined();
-    const rewritten = applyEdit(input, fix!);
-    expect(rewritten).toBe('SELECT * FROM t WHERE attribute_exists(x)');
+describe('findUnsupportedConstructs — IS [NOT] NULL', () => {
+  // DynamoDB runs IS NULL (NULL-typed attribute only); IS MISSING and
+  // attribute_not_exists() match absent attributes. Any quick fix would change
+  // the result set, and the DynoTable AI pipeline applies quick fixes unreviewed.
+  it('should warn without a quick fix', () => {
+    for (const input of ['SELECT * FROM t WHERE x IS NULL', 'SELECT * FROM t WHERE x IS NOT NULL']) {
+      const diag = lint(input).find((d) => d.message.includes('MISSING'));
+      expect(diag?.severity, input).toBe('warning');
+      expect(diag?.actions, input).toBeUndefined();
+    }
   });
 });
 
@@ -437,14 +430,6 @@ describe('findUnsupportedConstructs — quick-fix suppressed when test is not a 
     const input = "SELECT * FROM t WHERE concat(a, b) LIKE 'foo%'";
     const all = lint(input);
     const diag = all.find((d) => d.message.includes('begins_with'));
-    expect(diag).toBeDefined();
-    expect(diag?.actions).toBeUndefined();
-  });
-
-  it('should NOT emit an attribute_not_exists() quick-fix when IS NULL test is arithmetic', () => {
-    const input = 'SELECT * FROM t WHERE foo + 1 IS NULL';
-    const ds = unsupported(input);
-    const diag = ds.find((d) => d.message.includes('attribute_not_exists'));
     expect(diag).toBeDefined();
     expect(diag?.actions).toBeUndefined();
   });

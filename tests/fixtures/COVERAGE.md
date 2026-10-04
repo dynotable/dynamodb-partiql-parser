@@ -11,7 +11,7 @@ AWS sources:
 - UPDATE — https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.update.html
 - DELETE — https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.delete.html
 - Functions — https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-functions.html
-- Operators — https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html
+- Operators — https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html
 
 ## SELECT grammar
 
@@ -71,7 +71,7 @@ AWS sources:
 
 ## Operators (supported)
 
-[AWS source](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html)
+[AWS source](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html)
 
 | Rule                 | Fixture(s)                                                     |
 | -------------------- | -------------------------------------------------------------- |
@@ -90,10 +90,12 @@ AWS sources:
 | `op-arith-minus`     | [op-arithmetic-plus-minus](./op-arithmetic-plus-minus.partiql) |
 | `op-is-missing`      | [op-is-missing](./op-is-missing.partiql)                       |
 | `op-is-not-missing`  | [op-is-not-missing](./op-is-not-missing.partiql)               |
+| `op-is-null`         | [op-is-null](./op-is-null.partiql)                             |
+| `op-is-not-null`     | [op-is-not-null](./op-is-not-null.partiql)                     |
 
 ## Operators (unsupported)
 
-[AWS source](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.operators.html)
+[AWS source](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html)
 
 | Rule                    | Fixture(s)                                               |
 | ----------------------- | -------------------------------------------------------- |
@@ -160,7 +162,7 @@ AWS sources:
 
 ## IN cardinality
 
-[AWS source](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html)
+[AWS source](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html)
 
 | Rule                     | Fixture(s)                                 |
 | ------------------------ | ------------------------------------------ |
@@ -225,6 +227,4 @@ AWS sources:
 | `unsupported-like-substring`      | [unsupported-like-substring](./unsupported-like-substring.partiql)           |
 | `unsupported-like-prefix`         | [unsupported-like-prefix](./unsupported-like-prefix.partiql)                 |
 | `unsupported-like-suffix`         | [unsupported-like-suffix](./unsupported-like-suffix.partiql)                 |
-| `unsupported-is-null`             | [unsupported-is-null](./unsupported-is-null.partiql)                         |
-| `unsupported-is-not-null`         | [unsupported-is-not-null](./unsupported-is-not-null.partiql)                 |
 | `unsupported-double-quoted-value` | [unsupported-double-quoted-value](./unsupported-double-quoted-value.partiql) |

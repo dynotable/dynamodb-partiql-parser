@@ -1,5 +1,5 @@
 {
-  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.select.html",
+  "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-operators.html",
   "rules": ["in-cardinality-50"],
   "statementKind": "select_statement",
   "clean": true
